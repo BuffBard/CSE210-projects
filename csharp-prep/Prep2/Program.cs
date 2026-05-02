@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         bool pass=false;
-        string letterGrade="";
+        string letterGrade;
         Console.Write("Please enter your grade as a whole number: ");
         int numberGrade=Convert.ToInt32(Console.ReadLine());
         if (numberGrade >= 90)
@@ -32,7 +32,6 @@ class Program
             letterGrade="F";
         }
             Console.WriteLine($"Your grade is {letterGrade}.");
-
         if (pass)
         {
             Console.WriteLine("You have passed the class!");
@@ -40,7 +39,6 @@ class Program
         else
         {
             Console.WriteLine("You have failed the class.");
-            
         }
     }
 }
