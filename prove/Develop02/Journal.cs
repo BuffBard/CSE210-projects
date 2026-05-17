@@ -11,6 +11,7 @@ class Journal
         entry._prompt = entry.GetPrompt();
 
         Console.WriteLine(entry._prompt);
+        Console.WriteLine(">>> ");
         entry._response = Console.ReadLine();
 
         _entries.Add(entry);
@@ -24,7 +25,8 @@ class Journal
     }
     public void Save()
     {
-        System.Console.Write("Name of saving file: ");
+        System.Console.Write("Name of saving file");
+        Console.WriteLine(">>> ");
         string filename=Console.ReadLine();
 
         using (StreamWriter outputFile = new StreamWriter(filename))
@@ -37,7 +39,8 @@ class Journal
     }
     public void Load()
     {
-        System.Console.Write("Name of file to load: ");
+        System.Console.Write("Name of file to load");
+        Console.WriteLine(">>> ");
         string filename=Console.ReadLine();
 
         if (!File.Exists(filename))
