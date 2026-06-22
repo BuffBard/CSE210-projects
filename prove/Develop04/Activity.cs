@@ -23,19 +23,19 @@ public void DisplayStartingMessage()
         _time = int.Parse(Console.ReadLine());
 
         Console.WriteLine();
-        Console.Write("Get ready...");
-        Countdown(3);
+        Console.Write("Get ready... ");
+        Spinner(3);
     }
 
 public void DisplayEndingMessage()
     {
         Console.WriteLine();
         Console.WriteLine("Well done!");
-        Thread.Sleep(2000);
+        Spinner(3);
 
         Console.WriteLine();
         Console.WriteLine($"You have completed {_time} seconds of the {_name}.");
-        Thread.Sleep(2000);
+        Spinner(3);
     }
 public void Countdown(int seconds)
     {
@@ -45,5 +45,29 @@ public void Countdown(int seconds)
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
+    }
+
+ public void Spinner(int seconds)
+    {
+        string[] spinner = { "|", "/", "-", "\\" };
+
+        DateTime end = DateTime.Now.AddSeconds(seconds);
+
+        int i = 0;
+
+        while (DateTime.Now < end)
+        {
+            Console.Write(spinner[i]);
+            Thread.Sleep(200);
+            Console.Write("\b");
+
+            i++;
+
+            if (i >= spinner.Length)
+                i = 0;
+        }
+
+        Console.Write(" ");
+        Console.Write("\b");
     }
 }

@@ -50,7 +50,7 @@ class Reflection : Activity
 
             Console.WriteLine("> " + _questions[random.Next(_questions.Count)]);
 
-            Thread.Sleep(8000);
+            Spinner(6);
         }
 
         DisplayEndingMessage();
