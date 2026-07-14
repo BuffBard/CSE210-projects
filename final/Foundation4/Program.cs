@@ -1,9 +1,13 @@
-using System;
+
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation4 World!");
+        ActivityList activities=new();
+        foreach(Activity activity in activities.GetActivities())
+        {
+            Console.WriteLine(activity.GetSummary());
+        }
     }
 }
